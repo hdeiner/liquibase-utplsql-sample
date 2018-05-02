@@ -9,5 +9,8 @@
         <module name="liquibase-utplsql-sample" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="liquibase-utplsql-sample" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
