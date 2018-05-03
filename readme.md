@@ -17,3 +17,8 @@ sudo docker pull alexeiled/docker-oracle-xe-11g
 
 Run the Docker image.
 sudo docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g
+
+
+Install utPLSQL
+sqlplus sys/oracle@localhost:49161/xe as sysdba @install_headless.sql
+
