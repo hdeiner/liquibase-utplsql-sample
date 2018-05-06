@@ -1,0 +1,45 @@
+<testExecutions version="1">
+<file path="demoPLSQL/test/award_bonus/test_award_bonus.pkb">
+<testCase name="update_employee_salary" duration="1683" >
+</testCase>
+<testCase name="fail_on_null_bonus" duration="23" >
+</testCase>
+</file>
+<file path="demoPLSQL/test/between_string/test_betwnstr.pkb">
+<testCase name="normal_case" duration="6" >
+</testCase>
+<testCase name="zero_start_position" duration="3" >
+</testCase>
+<testCase name="big_end_position" duration="3" >
+</testCase>
+<testCase name="null_string" duration="4" >
+</testCase>
+<testCase name="bad_params" duration="11" >
+<error message="encountered errors">
+<![CDATA[
+ORA-06502: PL/SQL: numeric or value error: character to number conversion error
+ORA-06512: at "SYSTEM.TEST_BETWNSTR", line 25
+ORA-06512: at line 6
+]]>
+</error>
+</testCase>
+<testCase name="bad_test" duration="33" >
+<failure message="some expectations have failed">
+<![CDATA[
+Actual: '1234567' (varchar2) was expected to equal: '1' (varchar2) 
+]]>
+</failure>
+</testCase>
+<testCase name="disabled_test" duration="0" >
+<skipped message="skipped"/>
+</testCase>
+</file>
+<file path="demoPLSQL/test/remove_rooms_by_name/test_remove_rooms_by_name.pkb">
+<testCase name="remove_empty_room" duration="155" >
+</testCase>
+<testCase name="room_with_content" duration="163" >
+</testCase>
+<testCase name="null_room_name" duration="144" >
+</testCase>
+</file>
+</testExecutions>

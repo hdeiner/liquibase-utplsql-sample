@@ -1,0 +1,19 @@
+<coverage version="1">
+<file path="demoPLSQL/source/award_bonus/award_bonus.prc">
+<lineToCover lineNumber="6" covered="true"/>
+<lineToCover lineNumber="10" covered="true"/>
+<lineToCover lineNumber="11" covered="true"/>
+<lineToCover lineNumber="13" covered="true"/>
+</file>
+<file path="demoPLSQL/source/between_string/betwnstr.fnc">
+<lineToCover lineNumber="2" covered="true"/>
+<lineToCover lineNumber="4" covered="true"/>
+<lineToCover lineNumber="5" covered="true"/>
+<lineToCover lineNumber="7" covered="true"/>
+</file>
+<file path="demoPLSQL/source/remove_rooms_by_name/remove_rooms_by_name.prc">
+<lineToCover lineNumber="3" covered="true"/>
+<lineToCover lineNumber="4" covered="true"/>
+<lineToCover lineNumber="6" covered="true"/>
+</file>
+</coverage>
