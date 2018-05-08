@@ -1,22 +1,22 @@
 #!/bin/bash
 
 echo Stop all Docker containers
-sudo docker stop $(sudo docker ps -aq)
+echo password | sudo -S docker stop $(sudo docker ps -aq)
 
 echo Remove exited Docker containers
-sudo docker ps --filter status=dead --filter status=exited -aq | xargs -r sudo docker rm -v
+echo password | sudo -S docker ps --filter status=dead --filter status=exited -aq | xargs -r sudo docker rm -v
 
 echo Remove unused Docker images
-sudo docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r sudo docker rmi
+echo password | sudo -S docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r sudo docker rmi
 
 echo Run the Docker image for Oracle 11g XE
-sudo docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g
+echo password | sudo -S docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g
 
 echo Wait for Oracle to start up
 sleep 60
 
 echo Install Schema and Test Data
-mvn install
+liquibase update
 
 echo Install utPLSQL
 cd utPLSQL/source

@@ -35,7 +35,7 @@
                 <version>2.0.1</version>
                 <executions>
                     <execution>
-                        <phase>process-resources</phase>
+                        <phase>test</phase>
                         <configuration>
                             <propertyFile>liquibase.properties</propertyFile>
                         </configuration>
