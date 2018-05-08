@@ -42,6 +42,6 @@ Install the PLSQL unit tests<br/>
 cd utPLSQL-demo-project/test<br/>
 install_sh<br/>
 <br/>
-Run the tests<br/>
-cd utPLSQL-demo-project/test<br/>
-run_sh<br/>
+IN THIS DEMO, EVERYTHING IS CONFIGURED TO RUN FROM MAVEN!<br/><br/>
+"mvn test" will do all of the docker container management, fresh oracle database, etc, liquibase database schema and data creation, utPLSQL installation, sample plSQL and plSQL unit test code, and running everything.<br/><br/>
+I probably should partition out the docker things into the "clean" phase, the liquibase stuff into the "compile" phase, installation of utPLSQL and the tests into the "test" phase, and fix the "install" phase to use liquibase and attach a completely different database instance.  Proof is left to the reader.
