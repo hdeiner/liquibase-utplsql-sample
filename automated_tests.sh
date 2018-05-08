@@ -1,16 +1,16 @@
 #!/bin/bash
 
 echo Stop all Docker containers
-echo password | sudo -S docker stop $(echo password | sudo -S docker ps -aq)
+sudo -S <<< "password" docker stop $(sudo -S <<< "password" docker ps -aq)
 
 echo Remove exited Docker containers
-echo password | sudo -S docker ps --filter status=dead --filter status=exited -aq | xargs -r sudo docker rm -v
+sudo -S <<< "password" docker ps --filter status=dead --filter status=exited -aq | xargs -r sudo -S <<< "password" docker rm -v
 
 echo Remove unused Docker images
-echo password | sudo -S docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r sudo docker rmi
+sudo -S <<< "password" docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r sudo -S <<< "password" docker rmi
 
 echo Run the Docker image for Oracle 11g XE
-echo password | sudo -S docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g
+sudo -S <<< "password" docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g
 
 echo Wait for Oracle to start up
 sleep 60
