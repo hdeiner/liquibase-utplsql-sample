@@ -1,18 +1,18 @@
 <testExecutions version="1">
 <file path="demoPLSQL/test/award_bonus/test_award_bonus.pkb">
-<testCase name="update_employee_salary" duration="1861" >
+<testCase name="update_employee_salary" duration="2004" >
 </testCase>
 <testCase name="fail_on_null_bonus" duration="27" >
 </testCase>
 </file>
 <file path="demoPLSQL/test/between_string/test_betwnstr.pkb">
-<testCase name="normal_case" duration="6" >
+<testCase name="normal_case" duration="8" >
 </testCase>
-<testCase name="zero_start_position" duration="4" >
+<testCase name="zero_start_position" duration="6" >
 </testCase>
 <testCase name="big_end_position" duration="5" >
 </testCase>
-<testCase name="null_string" duration="8" >
+<testCase name="null_string" duration="5" >
 </testCase>
 <testCase name="bad_params" duration="5" >
 <error message="encountered errors">
@@ -35,11 +35,11 @@ Actual: '1234567' (varchar2) was expected to equal: '1' (varchar2)
 </testCase>
 </file>
 <file path="demoPLSQL/test/remove_rooms_by_name/test_remove_rooms_by_name.pkb">
-<testCase name="remove_empty_room" duration="165" >
+<testCase name="remove_empty_room" duration="175" >
 </testCase>
-<testCase name="room_with_content" duration="151" >
+<testCase name="room_with_content" duration="159" >
 </testCase>
-<testCase name="null_room_name" duration="144" >
+<testCase name="null_room_name" duration="155" >
 </testCase>
 </file>
 </testExecutions>
