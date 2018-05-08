@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo Stop all Docker containers
-echo password | sudo -S docker stop $(sudo docker ps -aq)
+echo password | sudo -S docker stop $(echo password | sudo -S docker ps -aq)
 
 echo Remove exited Docker containers
 echo password | sudo -S docker ps --filter status=dead --filter status=exited -aq | xargs -r sudo docker rm -v
