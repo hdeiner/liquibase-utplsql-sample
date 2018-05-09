@@ -16,7 +16,7 @@ echo Wait for Oracle to start up
 sleep 60
 
 echo Install Schema and Test Data
-liquibase update
+liquibase --changeLogFile=db-schema-and-testdata.xml update
 
 echo Install utPLSQL
 cd utPLSQL/source
@@ -60,6 +60,6 @@ echo Run the PLSQL unit tests
 utplsql run system/oracle@localhost:49161:xe \
 -source_path=demoPLSQL/source -test_path=demoPLSQL/test \
 -f=ut_documentation_reporter  -c \
--f=ut_coverage_sonar_reporter -o=coverage.xml \
--f=ut_sonar_test_reporter     -o=test_results.xml \
+-f=ut_coverage_sonar_reporter -o=target/coverage.xml \
+-f=ut_sonar_test_reporter     -o=target/test_results.xml \
 --failure-exit-code=0
