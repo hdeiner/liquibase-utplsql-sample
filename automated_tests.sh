@@ -21,7 +21,7 @@ sqlplus sys/oracle@localhost:49161/xe as sysdba @install_headless.sql
 cd ../..
 
 echo Install Schema, Test Data, PLSQL Code and utPLSQL to test with
-liquibase --changeLogFile=db-changelog-PLSQL-and-unit-tests.xml update
+liquibase --changeLogFile=db-changelog-with-unit-tests.xml update
 
 echo Run the PLSQL unit tests
 mkdir -p test_results

@@ -6,4 +6,5 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
     <include file="db-schema.xml"/>
     <include file="db-testdata.xml"/>
+    <include file="db-plsql.xml"/>
 </databaseChangeLog>

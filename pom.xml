@@ -56,7 +56,7 @@
                         <phase>install</phase>
                         <configuration>
                             <propertyFile>liquibase.properties</propertyFile>
-                            <changeLogFile>db-changelog-schema-and-testdata.xml</changeLogFile>
+                            <changeLogFile>db-changelog-schema-testdata-and-PLSQL.xml</changeLogFile>
                         </configuration>
                         <goals>
                             <goal>update</goal>
