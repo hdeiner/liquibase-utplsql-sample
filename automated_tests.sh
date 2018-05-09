@@ -16,7 +16,7 @@ echo Wait for Oracle to start up
 sleep 60
 
 echo Install Schema and Test Data
-liquibase --changeLogFile=db-schema-and-testdata.xml update
+liquibase --changeLogFile=db-changelog-schema-and-testdata.xml update
 
 echo Install utPLSQL
 cd utPLSQL/source
