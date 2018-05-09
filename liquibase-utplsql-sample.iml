@@ -16,7 +16,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.oracle.jdbc:ojdbc8:12.2.0.1">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/ojdbc8.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/ojdbc8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
