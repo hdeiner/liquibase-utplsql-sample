@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./start_oracle_in_docker_container.sh
+./docker_start_oracle_test_database.sh
 
 echo Pause a minute to allow Oracle to start up
 sleep 60
