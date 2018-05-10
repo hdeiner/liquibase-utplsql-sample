@@ -51,7 +51,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <executions>
                     <execution>
-                        <id>Beast of burden database creation and unit tests</id>
+                        <id>CRISP Build of Test Database</id>
                         <phase>test</phase>
                         <goals>
                             <goal>exec</goal>
@@ -61,22 +61,16 @@
                             <commandlineArgs>build_and_test_database.sh</commandlineArgs>
                         </configuration>
                     </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>2.0.1</version>
-                <executions>
                     <execution>
+                        <id>CRISP Build of Production Database</id>
                         <phase>install</phase>
-                        <configuration>
-                            <propertyFile>liquibase.properties</propertyFile>
-                            <changeLogFile>src/main/db/changelog.xml</changeLogFile>
-                        </configuration>
                         <goals>
-                            <goal>update</goal>
+                            <goal>exec</goal>
                         </goals>
+                        <configuration>
+                            <executable>bash</executable>
+                            <commandlineArgs>build_production_database.sh</commandlineArgs>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

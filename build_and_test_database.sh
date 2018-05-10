@@ -1,5 +1,6 @@
 #!/bin/bash
 
+./docker_reset_containers.sh
 ./docker_start_oracle_test_database.sh
 
 echo Pause a minute to allow Oracle to start up
