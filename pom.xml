@@ -14,6 +14,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.1.0</version>
+            <type>maven-plugin</type>
+        </dependency>
+        <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
             <version>3.6.1</version>
@@ -30,6 +36,17 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>test_results</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <groupId>org.codehaus.mojo</groupId>
@@ -42,7 +59,7 @@
                         </goals>
                         <configuration>
                             <executable>bash</executable>
-                            <commandlineArgs>automated_tests.sh</commandlineArgs>
+                            <commandlineArgs>build_and_test_database.sh</commandlineArgs>
                         </configuration>
                     </execution>
                 </executions>
@@ -56,7 +73,7 @@
                         <phase>install</phase>
                         <configuration>
                             <propertyFile>liquibase.properties</propertyFile>
-                            <changeLogFile>db-changelog-schema-testdata-and-PLSQL.xml</changeLogFile>
+                            <changeLogFile>src/main/db/changelog.xml</changeLogFile>
                         </configuration>
                         <goals>
                             <goal>update</goal>

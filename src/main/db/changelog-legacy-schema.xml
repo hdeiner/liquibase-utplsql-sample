@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
 
-    <changeSet id="birth the tables" author="howarddeiner">
+    <changeSet id="Legacy Schema" author="howarddeiner">
         <sql>
             CREATE TABLE regions (
             region_id NUMBER PRIMARY KEY,
@@ -100,6 +100,10 @@
             CONSTRAINT fk_inventories_products FOREIGN KEY( product_id ) REFERENCES products( product_id ) ON DELETE CASCADE,
             CONSTRAINT fk_inventories_warehouses FOREIGN KEY( warehouse_id ) REFERENCES warehouses( warehouse_id ) ON DELETE CASCADE );
         </sql>
+    </changeSet>
+
+    <changeSet id="Legacy Schema Static Data" author="howarddeiner">
+        <sqlFile path="src/main/db/legacy-schema-static-data.sql"/>
     </changeSet>
 
 </databaseChangeLog>
