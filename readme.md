@@ -45,3 +45,8 @@ install_sh<br/>
 IN THIS DEMO, EVERYTHING IS CONFIGURED TO RUN FROM MAVEN!<br/><br/>
 "mvn test" will do all of the docker container management, fresh oracle database, etc, liquibase database schema and data creation, utPLSQL installation, sample plSQL and plSQL unit test code, and running everything.<br/><br/>
 I probably should partition out the docker things into the "clean" phase, the liquibase stuff into the "compile" phase, installation of utPLSQL and the tests into the "test" phase, and fix the "install" phase to use liquibase and attach a completely different database instance.  Proof is left to the reader.
+
+To run Jenkins in a Docker container on port 9090:
+```bash
+docker run -p 9090:8080 -p 50090:50000 --name Jenkins jenkins/jenkins:lts
+```
