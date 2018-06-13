@@ -58,7 +58,7 @@
                         </goals>
                         <configuration>
                             <executable>bash</executable>
-                            <commandlineArgs>build_and_test_database.sh</commandlineArgs>
+                            <commandlineArgs>build_test_database.sh</commandlineArgs>
                         </configuration>
                     </execution>
                     <execution>
